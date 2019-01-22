@@ -20,8 +20,8 @@ const routes = {
       load: () => import(/* webpackChunkName: 'home' */ './home'),
     },
     {
-      path: '/about',
-      load: () => import(/* webpackChunkName: 'about' */ './about'),
+      path: '/movie/:movieId',
+      load: () => import(/* webpackChunkName: 'movie' */ './movie'),
     },
     // Wildcard routes, e.g. { path: '(.*)', ... } (must go last)
     {

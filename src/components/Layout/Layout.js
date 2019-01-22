@@ -23,12 +23,12 @@ class Layout extends React.Component {
     children: PropTypes.node.isRequired,
   };
 
+
   render() {
     return (
       <div>
-        <Header />
+        <Header/>
         {this.props.children}
-
         <Footer />
       </div>
     );

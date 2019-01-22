@@ -23,6 +23,10 @@
   line-height: 1em;
   text-align: center;
 }
+.title a {
+  color: #fff;
+  text-decoration: none;
+}
 
 .inputFilter {
   background: none;

@@ -8,36 +8,74 @@
  */
 
 import React from 'react';
+import { bindActionCreators } from 'redux';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
+import Link from '../Link';
+import history from '../../history';
+import { setSearchText } from '../../actions/movies';
 import s from './Header.css';
 
+function mapDispatchToProps(dispatch) {
+  return {
+    actions: bindActionCreators(
+      {
+        setSearchText,
+      },
+      dispatch,
+    ),
+  };
+}
+
+function mapStateToProps({ movies }) {
+  return {
+    searchText: movies.searchText,
+  };
+}
+
 class Header extends React.PureComponent {
-  state = {
-    loading: true,
-    filterText: '',
+  /* eslint-disable react/forbid-prop-types */
+  static propTypes = {
+    searchText: PropTypes.string.isRequired,
+    actions: PropTypes.object.isRequired,
   };
 
-  handleFilterChange = () => {};
+  handleFilterChange = event => {
+    const { actions } = this.props;
+    actions.setSearchText(event.target.value);
+  };
+
+  clearText = () => {
+    const { actions } = this.props;
+    actions.setSearchText('');
+  };
 
   render() {
-    const { loading } = this.state;
+    const { searchText } = this.props;
     return (
       <div className={s.headerHolder}>
         <div className="container">
           <div className="row">
-            <div className="col-sm-4 col-md-3">
-              <div className={s.title}>Movies List</div>
+            <div className="col-sm-3">
+              <div className={s.title}>
+                <Link to="/">Movies List</Link>
+              </div>
             </div>
-            <div className="col-sm-8 col-md-9">
+            <div className="col-sm-9">
               <div className={s.inputHolder}>
                 <input
                   type="text"
                   className={s.inputFilter}
                   onChange={this.handleFilterChange}
                   placeholder="Type to find movie"
-                  disabled={loading}
+                  value={searchText}
                 />
-                <button className={s.clearInput}>×</button>
+                {searchText && (
+                  <button className={s.clearInput} onClick={this.clearText}>
+                    ×
+                  </button>
+                )}
               </div>
             </div>
           </div>
@@ -47,4 +85,7 @@ class Header extends React.PureComponent {
   }
 }
 
-export default withStyles(s)(Header);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(withStyles(s)(Header));

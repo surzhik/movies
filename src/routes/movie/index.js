@@ -8,20 +8,18 @@
  */
 
 import React from 'react';
+import Movie from './Movie';
 import Layout from '../../components/Layout';
-import Page from '../../components/Page';
-import about from './about.md';
 
-function action() {
+function action({ params }) {
   return {
-    chunks: ['about'],
-    title: about.title,
+    title: 'Movie',
+    chunks: ['movie'],
     component: (
       <Layout>
-        <Page {...about} />
+        <Movie movieId={params.movieId} />
       </Layout>
     ),
   };
 }
-
 export default action;

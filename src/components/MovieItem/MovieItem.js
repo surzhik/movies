@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import history from '../../history';
-import s from './MovieCard.css';
+import s from './MovieItem.css';
 
-class MovieCard extends React.Component {
+class MovieItem extends React.Component {
   /* eslint-disable react/forbid-prop-types */
   static propTypes = {
     movie: PropTypes.object.isRequired,
@@ -57,4 +57,4 @@ class MovieCard extends React.Component {
   }
 }
 
-export default withStyles(s)(MovieCard);
+export default withStyles(s)(MovieItem);
