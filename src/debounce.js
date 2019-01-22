@@ -1,3 +1,5 @@
+/* eslint-disable func-names */
+/* eslint-disable prefer-rest-params */
 export default function debounce(func, wait, immediate) {
   let timeout;
   return function() {

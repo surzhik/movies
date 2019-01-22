@@ -3,7 +3,7 @@
   top: 50%;
   left: 50%;
   margin-left: -50px;
-  background: #ffffff;
+  background: #fff;
   width: 100px;
   height: 100px;
   border-radius: 100%;
@@ -11,6 +11,7 @@
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
   z-index: 100;
 }
+
 .preloader {
   width: 100px;
   height: 50px;
@@ -18,6 +19,7 @@
   margin: 0 auto;
   position: relative;
 }
+
 .preloader div {
   color: #5d3c79;
   margin: 5px 0;
@@ -40,24 +42,50 @@
   display: inline-block;
   animation: opacity 1000ms infinite ease-in-out;
 }
-.preloader .line-0 { animation-delay: 800ms; }
-.preloader .line-1 { animation-delay: 600ms; }
-.preloader .line-2 { animation-delay: 400ms; }
-.preloader .line-3 { animation-delay: 200ms; }
-.preloader .line-4 { animation-delay: 200ms; }
-.preloader .line-5 { animation-delay: 400ms; }
-.preloader .line-6 { animation-delay: 600ms; }
-.preloader .line-7 { animation-delay: 800ms; }
+
+.preloader .line-0 {
+  animation-delay: 800ms;
+}
+
+.preloader .line-1 {
+  animation-delay: 600ms;
+}
+
+.preloader .line-2 {
+  animation-delay: 400ms;
+}
+
+.preloader .line-3 {
+  animation-delay: 200ms;
+}
+
+.preloader .line-4 {
+  animation-delay: 200ms;
+}
+
+.preloader .line-5 {
+  animation-delay: 400ms;
+}
+
+.preloader .line-6 {
+  animation-delay: 600ms;
+}
+
+.preloader .line-7 {
+  animation-delay: 800ms;
+}
 
 @keyframes opacity {
   0% {
     opacity: 1;
     height: 15px;
   }
+
   50% {
     opacity: 0;
     height: 12px;
   }
+
   100% {
     opacity: 1;
     height: 15px;

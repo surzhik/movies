@@ -15,10 +15,12 @@ import InfiniteScroll from 'react-infinite-scroller';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import { getGenresList } from '../../actions/genres';
 import { getMoviesList, searchMovies } from '../../actions/movies';
+import { clearMovie } from '../../actions/movie';
 import Loader from '../../components/Loader';
 import ErrorLoading from '../../components/ErrorLoading';
 import MovieCard from '../../components/MovieCard';
 import debounce from '../../debounce';
+
 import s from './Home.css';
 
 function mapDispatchToProps(dispatch) {
@@ -28,6 +30,7 @@ function mapDispatchToProps(dispatch) {
         getGenresList,
         getMoviesList,
         searchMovies,
+        clearMovie,
       },
       dispatch,
     ),
@@ -58,10 +61,24 @@ class Home extends React.Component {
   static defaultProps = {
     loading: false,
   };
+  /* eslint-disable react/sort-comp */
+  /* eslint-disable no-param-reassign */
+  prepareGenres = () => {
+    const { genres } = this.props;
+    const data = JSON.parse(JSON.stringify(this.props.data));
+    if (data.results && data.results.length) {
+      data.results.forEach(movie => {
+        movie.genres = genres.data.filter(genre =>
+          movie.genre_ids.includes(genre.id),
+        );
+      });
+    }
+    return data.results || [];
+  };
 
   state = {
     loadingView: this.props.loading,
-    moviesData: this.props.data.results || [],
+    moviesData: this.props.data.results ? this.prepareGenres() : [],
     appError: this.props.error,
   };
 
@@ -79,7 +96,7 @@ class Home extends React.Component {
     });
   }
 
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate(prevProps) {
     /* eslint-disable react/no-did-update-set-state */
 
     const stateObject = {};
@@ -119,21 +136,7 @@ class Home extends React.Component {
     window.scrollTo(0, 0);
   }, 1000);
 
-  prepareGenres = () => {
-    const { genres } = this.props;
-    const data = JSON.parse(JSON.stringify(this.props.data));
-    if (data.results && data.results.length) {
-      data.results.forEach(movie => {
-        movie.genres = genres.data.filter(genre =>
-          movie.genre_ids.includes(genre.id),
-        );
-      });
-    }
-    return data.results || [];
-  };
-
   loadMore = () => {
-    console.log('loadMore');
     const { loadingView } = this.state;
     const { actions, data, searchText } = this.props;
 
@@ -145,6 +148,10 @@ class Home extends React.Component {
       }
     }
     //
+  };
+  handleClearMovie = () => {
+    const { actions } = this.props;
+    actions.clearMovie();
   };
 
   render() {
@@ -172,7 +179,11 @@ class Home extends React.Component {
                       hasMore={data.page < data.total_pages}
                     >
                       {moviesData.map(movie => (
-                        <MovieCard movie={movie} key={`movie_${movie.id}`} />
+                        <MovieCard
+                          movie={movie}
+                          key={`movie_${movie.id}`}
+                          clearMovie={this.handleClearMovie}
+                        />
                       ))}
                     </InfiniteScroll>
                   </div>

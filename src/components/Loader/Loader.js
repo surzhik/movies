@@ -7,6 +7,7 @@
  * LICENSE.txt file in the root directory of this source tree.
  */
 /* eslint-disable react/no-array-index-key */
+/* eslint-disable css-modules/no-unused-class */
 import React from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './Loader.css';

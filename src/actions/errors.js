@@ -6,7 +6,8 @@ export function errorClear() {
     type: ERROR_CLEAR,
   };
 }
-export function errorSet({error, message}) {
+
+export function errorSet({ error, message }) {
   return {
     type: ERROR_SET,
     payload: {

@@ -5,8 +5,11 @@
   padding: 100px 0 40px 0;
 }
 
-
+.totalPages {
+  font-weight: bold;
+  margin: 30px 0 -20px 0;
+}
 
 .movieHolder {
-
+  margin: 0;
 }

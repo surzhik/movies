@@ -13,7 +13,6 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import Link from '../Link';
-import history from '../../history';
 import { setSearchText } from '../../actions/movies';
 import s from './Header.css';
 
@@ -59,7 +58,7 @@ class Header extends React.PureComponent {
           <div className="row">
             <div className="col-sm-3">
               <div className={s.title}>
-                <Link to="/">Movies List</Link>
+                <Link to="/">PopMovies</Link>
               </div>
             </div>
             <div className="col-sm-9">

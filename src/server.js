@@ -57,17 +57,6 @@ app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-// Error handler for express-jwt
-app.use((err, req, res, next) => {
-  // eslint-disable-line no-unused-vars
-  if (err instanceof Jwt401Error) {
-    console.error('[express-jwt-error]', req.cookies.id_token);
-    // `clearCookie`, otherwise movies can't use web-app until cookie expires
-    res.clearCookie('id_token');
-  }
-  next(err);
-});
-
 //
 // Register server-side rendering middleware
 // -----------------------------------------------------------------------------

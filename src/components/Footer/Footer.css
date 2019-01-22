@@ -21,7 +21,7 @@
 }
 
 .link {
-  margin-left:  10px;
+  margin-left: 10px;
 }
 
 .link,
@@ -31,5 +31,5 @@
 }
 
 .link:hover {
-  color: #000000;
+  color: #000;
 }

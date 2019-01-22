@@ -23,6 +23,7 @@
   line-height: 1em;
   text-align: center;
 }
+
 .title a {
   color: #fff;
   text-decoration: none;
@@ -30,7 +31,7 @@
 
 .inputFilter {
   background: none;
-  border: 1px solid rgba(255,255,255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.4);
   margin: 0 0 10px 0;
   width: 100%;
   font-size: 1.2em;
@@ -38,6 +39,11 @@
   color: #fff;
   border-radius: 16px;
   height: 34px;
+}
+
+.inputFilter::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+  font-weight: 300;
 }
 
 .inputHolder {
@@ -89,5 +95,4 @@
   .inputFilter {
     margin-top: 10px;
   }
-
 }

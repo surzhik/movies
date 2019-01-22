@@ -6,7 +6,6 @@
 }
 
 .posterHolder {
-  background: #f0f0f0;
   min-height: 100px;
   position: relative;
 }
@@ -45,16 +44,19 @@
   margin-top: 15px;
 }
 
-.releaseDate {
+.propsRow {
   font-size: 12px;
   margin-top: 10px;
 }
 
-.releaseDate span {
+.propsRow span {
   font-weight: bold;
 }
-.releaseDate + .releaseDate {
-  margin-top: 0;
+
+.propsRow + .propsRow {
+  margin-top: 5px;
+  padding-top: 5px;
+  border-top: 1px solid #f5f5f5;
 }
 
 .movieHolder:hover {
@@ -63,21 +65,22 @@
 }
 
 .movieHolder:hover .movieTitle {
-  color: #000000;
+  color: #000;
 }
 
-.releaseDate ul {
+.propsRow ul {
   display: inline-block;
   margin: 0;
   padding: 0;
   list-style: none;
 }
-.releaseDate ul li {
+
+.propsRow ul li {
   display: inline;
 }
 
-.releaseDate ul li:not(:last-child):after {
-  content: ", ";
+.propsRow ul li:not(:last-child)::after {
+  content: ', ';
 }
 
 @media (min-width: 767px) {
