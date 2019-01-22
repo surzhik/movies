@@ -9,39 +9,27 @@
 
 @import '../variables.css';
 
-.root {
-  background: #333;
-  color: #fff;
-}
-
-.container {
-  margin: 0 auto;
-  padding: 20px 15px;
-  max-width: var(--max-content-width);
+.footerHolder {
+  color: #666;
+  display: flex;
+  flex-direction: column;
+  height: 20px;
   text-align: center;
+  font-size: 12px;
+  position: relative;
+  top: -20px;
 }
 
-.text {
-  color: rgba(255, 255, 255, 0.5);
-}
-
-.spacer {
-  color: rgba(255, 255, 255, 0.3);
-}
-
-.text,
 .link {
-  padding: 2px 5px;
-  font-size: 1em;
+  margin-left:  10px;
 }
 
 .link,
 .link:active,
 .link:visited {
-  color: rgba(255, 255, 255, 0.6);
   text-decoration: none;
 }
 
 .link:hover {
-  color: rgba(255, 255, 255, 1);
+  color: #000000;
 }

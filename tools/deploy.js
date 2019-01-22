@@ -16,9 +16,9 @@ import run from './run';
 // GitHub Pages
 const remote = {
   name: 'github',
-  url: 'https://github.com/<user>/<repo>.git',
+  url: 'https://github.com/<movies>/<repo>.git',
   branch: 'gh-pages',
-  website: 'https://<user>.github.io/<repo>/',
+  website: 'https://<movies>.github.io/<repo>/',
   static: true,
 };
 
@@ -33,7 +33,7 @@ const remote = {
 // Azure Web Apps
 // const remote = {
 //   name: 'azure',
-//   url: 'https://<user>@<app>.scm.azurewebsites.net:443/<app>.git',
+//   url: 'https://<movies>@<app>.scm.azurewebsites.net:443/<app>.git',
 //   branch: 'master',
 //   website: `http://<app>.azurewebsites.net`,
 // };

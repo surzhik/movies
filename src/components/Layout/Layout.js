@@ -16,7 +16,6 @@ import normalizeCss from 'normalize.css';
 import bootstrap from 'bootstrap/dist/css/bootstrap.css';
 import s from './Layout.css';
 import Header from '../Header';
-import Feedback from '../Feedback';
 import Footer from '../Footer';
 
 class Layout extends React.Component {
@@ -28,8 +27,8 @@ class Layout extends React.Component {
     return (
       <div>
         <Header />
-        <div className="container">{this.props.children}</div>
-        <Feedback />
+        {this.props.children}
+
         <Footer />
       </div>
     );

@@ -200,7 +200,7 @@ requests](CONTRIBUTING.md#pull-requests).
 ### Related Projects
 
 - [GraphQL Starter Kit](https://github.com/kriasoft/graphql-starter-kit) — Boilerplate for building data APIs with Node.js, JavaScript (via Babel) and GraphQL
-- [Membership Database](https://github.com/membership/membership.db) — SQL schema boilerplate for user accounts, profiles, roles, and auth claims
+- [Membership Database](https://github.com/membership/membership.db) — SQL schema boilerplate for movies accounts, profiles, roles, and auth claims
 - [Babel Starter Kit](https://github.com/kriasoft/babel-starter-kit) — Boilerplate for authoring JavaScript/React.js libraries
 
 ### Support

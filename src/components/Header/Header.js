@@ -11,7 +11,7 @@ import React from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './Header.css';
 
-class Header extends React.Component {
+class Header extends React.PureComponent {
   state = {
     loading: true,
     filterText: '',
@@ -22,13 +22,13 @@ class Header extends React.Component {
   render() {
     const { loading } = this.state;
     return (
-      <div className={s.header}>
+      <div className={s.headerHolder}>
         <div className="container">
           <div className="row">
-            <div className="col-sm-6 col-md-3">
-              <h1 className={s.title}>Movies List</h1>
+            <div className="col-sm-4 col-md-3">
+              <div className={s.title}>Movies List</div>
             </div>
-            <div className="col-sm-6 col-md-9">
+            <div className="col-sm-8 col-md-9">
               <div className={s.inputHolder}>
                 <input
                   type="text"

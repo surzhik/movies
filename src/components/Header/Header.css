@@ -9,17 +9,16 @@
 
 @import '../variables.css';
 
-
-.header {
+.headerHolder {
   background: #5d3c79;
   color: #fff;
   min-height: 55px;
+  width: 100%;
 }
-
 
 .title {
   margin: 0;
-  padding: 10px;
+  padding: 10px 0;
   font-size: 2em;
   line-height: 1em;
   text-align: center;
@@ -47,15 +46,15 @@
   color: #5d3c79;
   border-radius: 100%;
   text-align: center;
-  font-size: 2em;
+  font-size: 26px;
   position: absolute;
   top: 50%;
-  right: 3px;
-  line-height: 1.1em;
+  right: 4px;
+  line-height: 1;
   display: block;
-  width: 30px;
-  height: 30px;
-  margin-top: -15px;
+  width: 26px;
+  height: 26px;
+  margin-top: -13px;
 }
 
 .clearInput:hover {
@@ -68,6 +67,16 @@
 }
 
 @media (min-width: 767px) {
+  .headerHolder {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 2;
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+    height: 55px;
+  }
+
   .title {
     margin-top: 5px;
     text-align: left;
@@ -76,4 +85,5 @@
   .inputFilter {
     margin-top: 10px;
   }
+
 }

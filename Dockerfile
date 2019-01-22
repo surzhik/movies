@@ -12,7 +12,7 @@ RUN yarn install --production --no-progress
 # Copy application files
 COPY ./build .
 
-# Run the container under "node" user by default
+# Run the container under "node" movies by default
 USER node
 
 # Set NODE_ENV env variable to "production" for faster expressjs
